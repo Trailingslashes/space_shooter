@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgjgta0brh801"]
+
+[ext_resource type="PackedScene" uid="uid://cet1sc8407lxg" path="res://scenes/debug.tscn" id="1_ih574"]
+
+[node name="MainRoot" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 25, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 130, 0)
+fov = 30.0
+
+[node name="debug" parent="." instance=ExtResource("1_ih574")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 1.0
+grow_vertical = 0

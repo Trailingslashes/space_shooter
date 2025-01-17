@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cet1sc8407lxg"]
+
+[ext_resource type="FontFile" uid="uid://cimrmvl2tub4s" path="res://fonts/SpaceGrotesk-Regular.ttf" id="1_7p81n"]
+[ext_resource type="Script" path="res://scenes/debug.gd" id="1_wu2cv"]
+
+[node name="debug" type="Label"]
+theme_override_fonts/font = ExtResource("1_7p81n")
+theme_override_font_sizes/font_size = 24
+script = ExtResource("1_wu2cv")
