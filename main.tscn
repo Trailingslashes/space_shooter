@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgjgta0brh801"]
+[gd_scene load_steps=3 format=3 uid="uid://dgjgta0brh801"]
 
 [ext_resource type="PackedScene" uid="uid://cet1sc8407lxg" path="res://scenes/debug.tscn" id="1_ih574"]
+[ext_resource type="PackedScene" uid="uid://binxu5yod6h40" path="res://scenes/HUD.tscn" id="2_l42g5"]
 
 [node name="MainRoot" type="Node3D"]
 
@@ -18,3 +19,5 @@ anchor_bottom = 1.0
 offset_top = -32.0
 offset_right = 1.0
 grow_vertical = 0
+
+[node name="Hud" parent="." instance=ExtResource("2_l42g5")]
