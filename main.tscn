@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgjgta0brh801"]
+[gd_scene load_steps=8 format=3 uid="uid://dgjgta0brh801"]
 
 [ext_resource type="PackedScene" uid="uid://8fuseef84i0i" path="res://scenes/player.tscn" id="1_7jjhh"]
 [ext_resource type="PackedScene" uid="uid://cet1sc8407lxg" path="res://scenes/debug.tscn" id="1_ih574"]
 [ext_resource type="Script" path="res://main.gd" id="1_jcprc"]
 [ext_resource type="PackedScene" uid="uid://binxu5yod6h40" path="res://scenes/HUD.tscn" id="2_l42g5"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="3_7ppvw"]
+[ext_resource type="PackedScene" uid="uid://gvwdwb6nqlid" path="res://scenes/boundary.tscn" id="6_wqjbk"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sxu18"]
-size = Vector3(1, 20, 240.728)
+[sub_resource type="Environment" id="Environment_717ai"]
+background_mode = 1
 
 [node name="MainRoot" type="Node3D"]
 script = ExtResource("1_jcprc")
@@ -32,29 +33,7 @@ grow_vertical = 0
 
 [node name="Hud" parent="." instance=ExtResource("2_l42g5")]
 
-[node name="Boundary" type="Node3D" parent="."]
-visible = false
+[node name="Boundary" parent="." instance=ExtResource("6_wqjbk")]
 
-[node name="LeftWall" type="StaticBody3D" parent="Boundary"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary/LeftWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.3351, 0, -37.5682)
-shape = SubResource("BoxShape3D_sxu18")
-
-[node name="RightWall" type="StaticBody3D" parent="Boundary"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary/RightWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9509, 0, -7.56096)
-shape = SubResource("BoxShape3D_sxu18")
-
-[node name="TopWall" type="StaticBody3D" parent="Boundary"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary/TopWall"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.4534, 0, -40)
-shape = SubResource("BoxShape3D_sxu18")
-
-[node name="BottomWall" type="StaticBody3D" parent="Boundary"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boundary/BottomWall"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32.6159, 0, 40)
-shape = SubResource("BoxShape3D_sxu18")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_717ai")

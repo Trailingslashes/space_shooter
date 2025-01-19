@@ -7,5 +7,5 @@ To avoid these crashes, it is important to test the validity  of the specific n
 Since this check will likely be required in various sections of the game code, it is beneficial 
 to create a new autoload singleton class for this purpose.
 """
-func is_vaild_node(node) -> bool:
+func is_vaild_node(node: Node) -> bool:
 	return is_instance_valid(node) and node != null

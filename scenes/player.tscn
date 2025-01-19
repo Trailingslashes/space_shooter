@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=4 uid="uid://8fuseef84i0i"]
+[gd_scene load_steps=20 format=4 uid="uid://8fuseef84i0i"]
 
 [ext_resource type="Texture2D" uid="uid://qkg7vbpjpdx2" path="res://models/ammo-8-32x.png" id="1_2ofa0"]
+[ext_resource type="Texture2D" uid="uid://m27t15oewtk4" path="res://models/player_berry-nebula-32x.png" id="2_d8rgp"]
 [ext_resource type="Material" path="res://materials/metalic.tres" id="3_1in4n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgcu3"]
@@ -43,6 +44,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4qo3a")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipxkn"]
+albedo_texture = ExtResource("2_d8rgp")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_7gkd3"]
 _surfaces = [{
 "aabb": AABB(-5.07009, -2.52354, -1.45006, 10.1402, 3.52354, 2.90011),
@@ -75,6 +79,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7gkd3")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k33st"]
+albedo_texture = ExtResource("2_d8rgp")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_unb2f"]
 _surfaces = [{
 "aabb": AABB(-1, -1, -1.72388, 2, 2, 3.63814),
@@ -106,6 +113,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_unb2f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xem54"]
+albedo_texture = ExtResource("2_d8rgp")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_j5mcg"]
 _surfaces = [{
@@ -140,6 +150,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j5mcg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o5dg"]
+albedo_texture = ExtResource("2_d8rgp")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3vpo0"]
 _surfaces = [{
@@ -184,6 +197,7 @@ radius = 3.0
 transform = Transform3D(0.900206, 0, 0, 0, 0.567912, 0, 0, 0, 2.42826, 0, 0, 0)
 mesh = SubResource("ArrayMesh_14sgp")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ipxkn")
 
 [node name="Wings" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.28739, 0, 0, 0, 1.54109, 0, 0, -0.000943139)
@@ -192,16 +206,19 @@ skeleton = NodePath("")
 
 [node name="Engine" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.719773, 0, 0, 0, 0.311123, 0, 0, 0, 0.719773, 0.0276435, 0.018206, 2.73316)
+material_override = SubResource("StandardMaterial3D_k33st")
 mesh = SubResource("ArrayMesh_5bxol")
 skeleton = NodePath("")
 
 [node name="Jets" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.279221, 0, 0, 0, 0, -0.279221, 0, 0.783866, 0, 0.0452527, -0.0597947, 3.9691)
+material_override = SubResource("StandardMaterial3D_xem54")
 mesh = SubResource("ArrayMesh_relpv")
 skeleton = NodePath("")
 
 [node name="Weapon" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.44735, 0, 0, 0, 0, 0.410625, 0, -0.703522, 0, -0.00750448, -0.0481577, -2.99367)
+material_override = SubResource("StandardMaterial3D_3o5dg")
 mesh = SubResource("ArrayMesh_7s2hr")
 skeleton = NodePath("")
 
