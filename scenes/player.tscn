@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=4 uid="uid://8fuseef84i0i"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_i4jnf"]
-[ext_resource type="Texture2D" uid="uid://m27t15oewtk4" path="res://models/player_berry-nebula-32x.png" id="1_u4d17"]
+[ext_resource type="Texture2D" uid="uid://qkg7vbpjpdx2" path="res://models/ammo-8-32x.png" id="1_2ofa0"]
+[ext_resource type="Material" path="res://materials/metalic.tres" id="3_1in4n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgcu3"]
 resource_name = "Material.001"
 cull_mode = 2
-albedo_texture = ExtResource("1_u4d17")
+albedo_texture = ExtResource("1_2ofa0")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4qo3a"]
@@ -65,7 +65,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 300,
 "index_data": PackedByteArray("EwAPABYAEwALAA8ADQAqAAUADQAfACoAEgACAAoAEgAZAAIAAwAdAAcAAwAaAB0ADAAbABQADAAEABsAIQA9AC0AIQAxAD0ACQAgAA4ACQAkACAABgAnAAEABgArACcAAAAjAAgAAAAmACMAMgBAAC4AMgBEAEAAIgAwAB4AIgA0ADAALAA4ACgALAA8ADgAKQA1ACUAKQA5ADUASgBWAEYASgBaAFYAOgBIADYAOgBMAEgANwBFADMANwBJAEUALwBNADsALwBBAE0AUQBoAF0AUQBfAGgARwBTAEMARwBXAFMAPwBbAEsAPwBPAFsAQgBOAD4AQgBSAE4AYwBpAGAAYwBmAGkAVABeAFAAVABhAF4AXABkAFgAXABnAGQAWQBiAFUAWQBlAGIAEQB3AHMAEQAVAHcAeACGAHsAeABwAIYAEABqABcAEAByAGoAawAcABgAawBvABwAdgAbAG4AdgAUABsAfQCZAI0AfQCJAJkAdQB8AIEAdQB5AHwAcQCEAIcAcQBtAIQAbACAAIMAbAB0AIAAjwCcAKAAjwCKAJwAfwCMAJEAfwB6AIwAiACVAJgAiACFAJUAggCOAJIAggB+AI4ApgCyALYApgCiALIAlgCkAKgAlgCTAKQAlAChAKUAlACQAKEAiwCpAJ0AiwCXAKkArQDEALsArQC5AMQAowCvALMAowCfAK8AmwC3AKsAmwCnALcAngCqAK4AngCaAKoAvwDFAMIAvwC8AMUAsAC6AL0AsACsALoAuADAAMMAuAC0AMAAtQC+AMEAtQCxAL4A"),
-"material": SubResource("StandardMaterial3D_jgcu3"),
+"material": ExtResource("3_1in4n"),
 "name": "Material.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -179,7 +179,6 @@ shadow_mesh = SubResource("ArrayMesh_3vpo0")
 radius = 3.0
 
 [node name="player" type="CharacterBody3D"]
-script = ExtResource("1_i4jnf")
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.900206, 0, 0, 0, 0.567912, 0, 0, 0, 2.42826, 0, 0, 0)
@@ -208,4 +207,5 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+visible = false
 shape = SubResource("SphereShape3D_hke46")
