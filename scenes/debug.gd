@@ -8,6 +8,7 @@ var frame_time: int = 0
 var VRAM: int = 0
 var player: CharacterBody3D
 var small_star_count: int = 0
+var enemy_count: int = 0
 
 func init(_player: Node) -> void:
 	player = _player
@@ -22,11 +23,13 @@ func _process(delta: float) -> void:
 	frame_time = delta
 	VRAM = RenderingServer.get_rendering_info(RenderingServer.RENDERING_INFO_VIDEO_MEM_USED) / 1024 / 1024
 	small_star_count = get_tree().get_nodes_in_group("SmallStar").size()
+	enemy_count = get_tree().get_nodes_in_group("Enemy").size()
 	var data: String = "FPS: " + str(FPS) + "\n" + \
 	"Draw calls: " + str(draw_calls) + "\n" + \
 	"Frame time: " + str(frame_time) + "\n" + \
 	"VRAM: " + str(VRAM) + "\n" + \
-	"Star Count: " + str(small_star_count) + "\n"
+	"Star Count: " + str(small_star_count) + "\n" + \
+	"Asteroid Count " + str(enemy_count) + "\n"
 	
 	if Utils.is_vaild_node(player):
 		data += "Position: " + str(player.global_position) + "\n" + \
